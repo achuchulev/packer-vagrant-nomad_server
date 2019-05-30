@@ -1,4 +1,4 @@
-# Packer template to bake nomad frontend vagrant box for virtualbox. Kitchen test is included
+# Packer template to bake nomad server vagrant box for virtualbox. Kitchen test is included
 
 ### Prerequisites
 
