@@ -1,5 +1,10 @@
 #!/bin/bash
 
+mkdir -p /etc/nomad.d
+chmod a+w /etc/nomad.d
+
+mkdir -p /opt/nomad
+
 cat <<EOF > /etc/nomad.d/server.hcl
 
 data_dir  = "/opt/nomad"
