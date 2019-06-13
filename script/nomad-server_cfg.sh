@@ -15,12 +15,6 @@ datacenter = "dc1"
 
 bind_addr = "0.0.0.0"
 
-advertise {
-  rpc = "{{ GetInterfaceIP \"eth0\" }}"
-  http = "{{ GetInterfaceIP \"eth0\" }}"
-  serf = "{{ GetInterfaceIP \"eth0\" }}"
-}
-
 server {
   enabled = true
   bootstrap_expect = 3

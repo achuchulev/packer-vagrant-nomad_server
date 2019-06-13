@@ -44,3 +44,6 @@ sync
 
 echo "==> Disk usage after cleanup"
 df -h
+
+# Clear nomad data dir
+rm -rf /opt/nomad/*
