@@ -9,10 +9,6 @@ cat <<EOF > /etc/nomad.d/server.hcl
 
 data_dir  = "/opt/nomad"
 
-region = "global"
-
-datacenter = "dc1"
-
 bind_addr = "0.0.0.0"
 
 server {
