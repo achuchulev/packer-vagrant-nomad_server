@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 mkdir -p /etc/dpkg/dpkg.cfg.d
 cat >/etc/dpkg/dpkg.cfg.d/01_nodoc <<EOF
 path-exclude /usr/share/doc/*
@@ -8,6 +10,12 @@ path-exclude /usr/share/info/*
 path-exclude /usr/share/lintian/*
 path-exclude /usr/share/linda/*
 EOF
+
+killall apt apt-get
+rm /var/lib/apt/lists/lock
+rm /var/cache/apt/archives/lock
+rm /var/lib/dpkg/lock*
+dpkg --configure -a
 
 export DEBIAN_FRONTEND=noninteractive
 export APTARGS="-qq -o=Dpkg::Use-Pty=0"

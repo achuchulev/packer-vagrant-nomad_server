@@ -1,6 +1,6 @@
-#!/bin/bash -eu
+#!/usr/bin/env bash
 
-SSH_USER=${SSH_USERNAME:-vagrant}
+SSH_USER=${SSH_USERNAME:-ubuntu}
 
 echo "==> Cleaning up tmp"
 rm -rf /tmp/*
