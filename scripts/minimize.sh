@@ -1,4 +1,4 @@
-#!/bin/bash -eu
+#!/usr/bin/env bash
 
 # Reduce installed languages to just "en_US"
 echo "==> Configuring locales"

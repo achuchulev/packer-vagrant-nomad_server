@@ -1,15 +1,26 @@
 ---
 driver:
-  name: vagrant
-
+  name: ec2
+  aws_ssh_key_id: atanasc
+  #security_group_ids: ["sg-0e3a153ccaa3977cd"]
+  region: us-east-2
+  #availability_zone: b
+  instance_type: t2.micro
+  associate_public_ip: true
+ 
 provisioner:
   name: shell
 
+transport:
+  ssh_key: "~/.ssh/id_rsa"
+  connection_timeout: 10
+  connection_retries: 5
+  username: ubuntu
+
 platforms:
-  - name: nomadserver
+  - name: ubuntu-xenial
     driver:
-      box: nomadserver
-      provider: virtualbox
+      image_id: ami-0e2aa4ea219d7657e
 
 verifier:
   name: inspec
@@ -19,3 +30,27 @@ suites:
     verifier:
       inspec_tests:
         - test/integration/default
+
+
+# ---
+# driver:
+#   name: ec2
+#   instance_type: t2.micro
+
+# transport:
+#   username: ubuntu
+
+# provisioner:
+#   name: shell
+
+# platforms:
+#   - name: ubuntu
+#     driver: 
+#       image_id: ami-082a5d4cb01ee3450
+#       region: us-east-1
+
+# verifier:
+#   name: inspec
+
+# suites:
+# - name: default
