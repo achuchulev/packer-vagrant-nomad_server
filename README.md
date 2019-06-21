@@ -11,8 +11,8 @@
 ### Get the repo
 
 ```
-git clone https://github.com/achuchulev/packer-vagrant-nomad_server.git
-cd packer-vagrant-nomad_server
+git clone https://github.com/achuchulev/packer-aws-nomad-server.git
+cd packer-aws-nomad-server
 ```
 
 ### Validate template: 
